@@ -1,0 +1,21 @@
+---
+import MenuItemList from '@components/organisms/MenuItemList/MenuItemList.astro';
+import { beers, wines, alcoholicDrinks, withoutAlcohol } from '@data/menu';
+import BeltLayout from '@layouts/BeltLayout.astro';
+import Layout from '@layouts/Layout.astro';
+---
+
+<Layout pageTitle="Lily Pub | Carta">
+  <BeltLayout topSpace="big">
+    <h2
+      class="font-secondary text-secondary tracking-wider text-xl text-center underline md:text-3xl"
+    >
+      Nuestra Carta
+    </h2>
+
+    <MenuItemList data={beers} />
+    <MenuItemList data={wines} />
+    <MenuItemList data={alcoholicDrinks} />
+    <MenuItemList data={withoutAlcohol} />
+  </BeltLayout>
+</Layout>

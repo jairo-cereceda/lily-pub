@@ -1,0 +1,47 @@
+---
+import FooterItem from '@components/atoms/FooterItem/FooterItem.astro';
+import Image from 'astro/components/Image.astro';
+import { getImageMetadata } from '@utils/getImage';
+import SocialLink from '@components/atoms/SocialLink/SocialLink.astro';
+import { footerData, socialLinks } from '@data/footer';
+
+const metadata = await getImageMetadata('imgs/footer-top.png');
+---
+
+<footer
+  class="bg-white px-2 flex flex-col gap-5 mt-10 relative pt-20 pb-5 md:px-10 sm:pt-30 lg:pt-40 xl:pt-50 2xl:pt-65"
+>
+  <Image
+    src={metadata}
+    width={metadata.width}
+    height={metadata.height}
+    alt=""
+    class="absolute top-0 left-0 shadow-primary-up"
+  />
+  <div class="flex flex-col gap-5 md:flex-row md:justify-between items-center">
+    <div class="flex flex-col gap-2">
+      {footerData && footerData.map((item) => <FooterItem data={item} />)}
+    </div>
+
+    <div class="flex flex-col gap-4">
+      <div class="flex gap-2 items-center justify-center">
+        {socialLinks && socialLinks.map((link) => <SocialLink data={link} />)}
+      </div>
+      <div class="flex gap-2 justify-center text-black/70">
+        <a href="/legal-notice">Aviso Legal</a>
+      </div>
+    </div>
+  </div>
+
+  <p class="text-center">
+    Página web desarrollada por: <br />
+    <a href="https://jairo-cereceda.github.io/" class="underline"
+      >Jairo Cereceda Berciano</a
+    >
+  </p>
+
+  <p class="text-center text-black/70 italic">
+    Proyecto demostrativo desarrollado por Jairo Cereceda Berciano. Contenido
+    ficticio.
+  </p>
+</footer>

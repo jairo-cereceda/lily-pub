@@ -1,0 +1,30 @@
+---
+import { Icon } from 'astro-icon/components';
+
+export interface footerItemData {
+  link?: string;
+  text: string;
+  icon?: string;
+}
+
+export interface Props {
+  data: footerItemData;
+}
+
+const { data } = Astro.props;
+const { text, link, icon } = data;
+---
+
+{
+  link ? (
+    <a href="link" class="flex gap-2 items-start">
+      {icon && <Icon name={icon} size={24} />}
+      <p>{text}</p>
+    </a>
+  ) : (
+    <div class="flex gap-2 items-start">
+      {icon && <Icon name={icon} size={24} />}
+      <p>{text}</p>
+    </div>
+  )
+}

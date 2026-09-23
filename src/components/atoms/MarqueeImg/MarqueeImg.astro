@@ -1,0 +1,26 @@
+---
+import { getImageMetadata } from '@utils/getImage';
+import { Image } from 'astro:assets';
+
+export interface marqueImgData {
+  img: string;
+  imgAlt: string;
+}
+
+export interface Props {
+  data: marqueImgData;
+}
+
+const { data } = Astro.props;
+const { img, imgAlt } = data;
+
+const metadata = await getImageMetadata(img);
+---
+
+<Image
+  src={metadata}
+  width={metadata.width}
+  height={metadata.height}
+  alt={imgAlt}
+  class="aspect-marquee object-contain ml-2 mt-2 inline-block w-auto max-w-50"
+/>

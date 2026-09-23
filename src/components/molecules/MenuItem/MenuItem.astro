@@ -1,0 +1,42 @@
+---
+import { getImageMetadata } from '@utils/getImage';
+import { Image } from 'astro:assets';
+
+export interface menuItemData {
+  img?: string;
+  title: string;
+  price?: string;
+}
+
+export interface Props {
+  data: menuItemData;
+}
+
+const { data } = Astro.props;
+const { img, title, price } = data;
+
+let metadata;
+
+if (img) {
+  metadata = await getImageMetadata(img);
+}
+---
+
+<div class="p-4 rounded-xl bg-white w-full flex flex-col gap-4">
+  {
+    img && metadata && (
+      <Image
+        src={metadata}
+        width={metadata.width}
+        height={metadata.height}
+        alt=""
+        class="w-full aspect-square object-cover rounded-xl"
+      />
+    )
+  }
+
+  <div class="flex justify-between gap-2">
+    <h3 class="font-semibold">{title}</h3>
+    {price && <p>{price}</p>}
+  </div>
+</div>

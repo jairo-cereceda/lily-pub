@@ -1,0 +1,29 @@
+---
+import MarqueeImg, {
+  type marqueImgData,
+} from '@components/atoms/MarqueeImg/MarqueeImg.astro';
+
+export interface imgAndTextData {
+  imgs: marqueImgData[];
+}
+
+export interface Props {
+  data: imgAndTextData;
+}
+
+const { data } = Astro.props;
+const { imgs } = data;
+---
+
+<div
+  id="marquee"
+  class="w-full bg-white p-4 bleed-x shadow-white-extended gap-5 overflow-hidden whitespace-nowrap"
+>
+  {
+    [1, 2, 3].map(() => (
+      <div class="inline-block animate-scroll-left ">
+        {imgs && imgs.map((img) => <MarqueeImg data={img} />)}
+      </div>
+    ))
+  }
+</div>

@@ -1,0 +1,22 @@
+---
+import { Image } from 'astro:assets';
+
+import favicon from '@media/favicon.png';
+import HeaderNavigation from '@components/molecules/HeaderNavigation/HeaderNavigation.astro';
+import { headerAnchors } from '@data/header';
+---
+
+<header
+  class="p-2 flex justify-between items-center bg-black-light fixed w-full backdrop-blur-sm z-70"
+  id="header"
+>
+  <a
+    href="/"
+    class="flex items-center gap-2 text-xl text-white tracking-wider font-secondary"
+  >
+    <Image src={favicon} alt="Ir a inicio" width={48} height={48} />
+    <p>Lily Pub</p>
+  </a>
+
+  <HeaderNavigation data={headerAnchors} />
+</header>

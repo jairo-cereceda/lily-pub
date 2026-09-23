@@ -1,0 +1,27 @@
+---
+import BeltLayout from '@layouts/BeltLayout.astro';
+import Layout from '@layouts/Layout.astro';
+---
+
+<Layout pageTitle="Lily Pub | 404 not found">
+  <BeltLayout topSpace="bigger">
+    <div
+      class="flex flex-col text-center h-full w-full justify-center items-center"
+    >
+      <div class="bg-white p-4 py-6 rounded-xl m-2 flex flex-col gap-3">
+        <h1 class="text-secondary font-secondary tracking-wider text-lg">
+          404 not found
+        </h1>
+        <p class="uppercase font-semibold">
+          Parece que por aquí no se va a la playa 🏖️
+        </p>
+        <p>Te recomendamos que vuelvas a nuestro pub</p>
+        <a
+          href="/"
+          class="bg-detail text-white px-4 py-2 rounded-2xl transition-colors duration-150 hover:bg-light-detail active:bg-light-detail"
+          >Ir al inicio</a
+        >
+      </div>
+    </div>
+  </BeltLayout>
+</Layout>

@@ -1,0 +1,40 @@
+---
+import { Icon } from 'astro-icon/components';
+
+export interface textIconsPanelData {
+  text: string;
+  icon: string;
+}
+
+export interface Props {
+  data: textIconsPanelData;
+}
+
+const { data } = Astro.props;
+const { text, icon } = data;
+---
+
+<div
+  class="w-full flex flex-col items-center justify-center gap-5 uppercase text-center text-lg font-semibold"
+>
+  <p>{text}</p>
+  <div
+    class="flex gap-2 items-center justify-center w-full h-8 overflow-hidden relative"
+  >
+    <div class="animate-icon-spin">
+      <Icon name={icon} size="32" class="animate-nervous" />
+      <Icon name={icon} size="32" class="animate-nervous" />
+      <Icon name={icon} size="32" class="animate-nervous" />
+    </div>
+    <div class="animate-icon-spin">
+      <Icon name={icon} size="32" class="animate-nervous" />
+      <Icon name={icon} size="32" class="animate-nervous" />
+      <Icon name={icon} size="32" class="animate-nervous" />
+    </div>
+    <div class="animate-icon-spin">
+      <Icon name={icon} size="32" class="animate-nervous" />
+      <Icon name={icon} size="32" class="animate-nervous" />
+      <Icon name={icon} size="32" class="animate-nervous" />
+    </div>
+  </div>
+</div>

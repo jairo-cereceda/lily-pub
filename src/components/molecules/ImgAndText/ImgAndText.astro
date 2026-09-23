@@ -1,0 +1,51 @@
+---
+import { getImageMetadata } from '@utils/getImage';
+import { Image } from 'astro:assets';
+
+export interface imgAndTextData {
+  imgSrc: string;
+  title: string;
+  text: string;
+}
+
+export interface Props {
+  data: imgAndTextData;
+  index: number;
+}
+
+const { data, index } = Astro.props;
+const { imgSrc, title, text } = data;
+
+const metadata = await getImageMetadata(imgSrc);
+const isOdd = index % 2 !== 0;
+---
+
+<article
+  class={`flex flex-col gap-4 lg:grid lg:grid-cols-2 lg:items-center lg:gap-10 xl:items-start ${isOdd ? 'translate-x-[50%]' : 'translate-x-[-50%]'}  transition-all opacity-0 duration-700`}
+  data-info-block
+>
+  <h2
+    class="text-center font-secondary text-secondary text-lg tracking-wider lg:hidden"
+  >
+    {title}
+  </h2>
+  <Image
+    src={metadata}
+    width={metadata.width}
+    height={metadata.height}
+    alt=""
+    class={`rounded-lg aspect-square mx-auto object-cover md:aspect-video lg:aspect-square md:w-full lg:w-auto  ${isOdd ? 'lg:order-2' : 'lg:order-1'}`}
+  />
+  <div
+    class={`flex flex-col gap-4 xl:mt-10 ${isOdd ? 'lg:order-1' : 'lg:order-2'}`}
+  >
+    <h2
+      class="text-center font-secondary text-secondary text-3xl tracking-wider hidden lg:block"
+    >
+      {title}
+    </h2>
+    <p class="md:text-xl lg:text-3xl">
+      {text}
+    </p>
+  </div>
+</article>

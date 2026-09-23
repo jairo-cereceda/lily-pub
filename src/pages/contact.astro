@@ -1,0 +1,37 @@
+---
+import ContactForm from '@components/organisms/ContactForm/ContactForm.astro';
+import BeltLayout from '@layouts/BeltLayout.astro';
+import Layout from '@layouts/Layout.astro';
+import { Icon } from 'astro-icon/components';
+---
+
+<Layout>
+  <BeltLayout topSpace="big">
+    <h1
+      class="font-secondary text-secondary tracking-wider text-xl text-center underline md:text-3xl"
+    >
+      Contacto
+    </h1>
+
+    <div
+      class="flex flex-col gap-10 lg:p-10 lg:bg-white lg:rounded-2xl lg:flex-row"
+    >
+      <section
+        class="text-center flex flex-col gap-4 lg:border-r lg:border-black/30 lg:h-full lg:justify-center lg:pr-10"
+      >
+        <h2
+          class="text-center font-secondary text-secondary text-lg tracking-wider"
+        >
+          ¿Quieres reservar?
+        </h2>
+        <button
+          data-open-fictional-popup
+          class="p-4 bg-detail text-white font-semibold rounded-2xl flex gap-3 items-center cursor-pointer transition-colors duration-150 hover:bg-light-detail active:bg-light-detail"
+          ><Icon name="whatsapp" size="24" class="text-white" /> Háblanos por whatsapp</button
+        >
+      </section>
+
+      <ContactForm />
+    </div>
+  </BeltLayout>
+</Layout>

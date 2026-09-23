@@ -1,0 +1,42 @@
+---
+
+---
+
+<section class="flex flex-col gap-4">
+  <h2 class="text-center font-secondary text-secondary text-lg tracking-wider">
+    ¿Tienes una consulta más profunda?
+  </h2>
+  <form class="flex flex-col gap-4 bg-white p-2 rounded-xl sm:p-6 lg:border">
+    <div>
+      <label for="name">Tu nombre:</label>
+      <input
+        type="text"
+        name="name"
+        id="name"
+        class="rounded-lg border w-full p-2"
+      />
+    </div>
+    <div>
+      <label for="email">Tu correo:</label>
+      <input
+        type="text"
+        name="email"
+        id="email"
+        class="rounded-lg border w-full p-2"
+      />
+    </div>
+    <div>
+      <label for="message">Mensaje:</label>
+      <textarea id="message" class="rounded-lg border w-full p-2"></textarea>
+    </div>
+    <button
+      type="button"
+      data-open-fictional-popup
+      class="bg-detail px-4 py-2 rounded-full text-white font-semibold cursor-pointer transition-colors duration-150 hover:bg-light-detail active:bg-light-detail"
+      >Enviar</button
+    >
+    <p class="text-xs text-black/70">
+      Esta web es ficticia, no recopilamos datos de ningún tipo
+    </p>
+  </form>
+</section>

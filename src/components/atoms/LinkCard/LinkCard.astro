@@ -1,0 +1,21 @@
+---
+export interface linkCardData {
+  link: string;
+  linkText: string;
+}
+
+export interface Props {
+  data: linkCardData;
+}
+
+const { data } = Astro.props;
+const { linkText, link } = data;
+---
+
+<a
+  href={link}
+  class="bg-linear-to-r from-light-detail via-detail to-light-detail text-white p-4 rounded-2xl font-semibold flex md:w-full md:text-xl lg:pt-10
+  transition-colors duration-500 hover:from-detail hover:via-light-detail hover:to-detail active:from-detail active:via-light-detail active:to-detail"
+>
+  <p>{linkText}</p>
+</a>

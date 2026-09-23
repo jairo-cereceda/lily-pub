@@ -1,0 +1,27 @@
+---
+import type { linkCardData } from '@components/atoms/LinkCard/LinkCard.astro';
+import LinkCard from '@components/atoms/LinkCard/LinkCard.astro';
+
+export interface linkCardListData {
+  title: string;
+  items: linkCardData[];
+}
+
+export interface Props {
+  data: linkCardListData;
+}
+
+const { data } = Astro.props;
+const { title, items } = data;
+---
+
+<section class="flex flex-col gap-4 md:w-full max-w-big md:gap-8">
+  <h2
+    class="text-secondary tracking-wider font-secondary underline md:text-center md:text-2xl"
+  >
+    {title}
+  </h2>
+  <div class="flex flex-col gap-2 w-full md:flex-row">
+    {items && items.map((item) => <LinkCard data={item} />)}
+  </div>
+</section>

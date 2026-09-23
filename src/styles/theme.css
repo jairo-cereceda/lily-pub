@@ -1,0 +1,99 @@
+@theme {
+  /*Fonts*/
+  --font-primary: 'Mozilla Text', sans-serif;
+  --font-secondary: 'Climate Crisis', sans-serif;
+  --font-weight-light: 300;
+  --font-weight-normal: 400;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  /*Measures*/
+  --spacing-small: 10rem;
+  --spacing-medium-small: 20rem;
+  --spacing-medium: 40rem;
+  --spacing-medium-big: 45rem;
+  --spacing-big: 70rem;
+
+  /*Colors*/
+  --color-primary: #f3e7d3;
+  --color-secondary: #9b4e1a;
+  --color-light-detail: #366d78;
+  --color-detail: #1e5a66;
+  --color-black: #0e0e10;
+  --color-white: #fff;
+
+  --color-black-light: #0e0e1070;
+  --color-detail-light: #00d4ff70;
+
+  /*Shadows*/
+  --shadow-white-extended: 0 0 0 100vmax var(--color-white);
+  --shadow-primary-up: 0 -10px 20px -5px var(--color-primary);
+
+  /*Aspects*/
+  --aspect-marquee: 4/1;
+
+  /*Animations*/
+  --animate-scroll-left: scroll-left 15s linear infinite;
+  --animate-fade-in: fade-in 0.25s ease-out;
+  --animate-icon-spin: iconSpin 4s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+  --animate-nervous: nervous-bounce 2s ease-in-out infinite;
+
+  @keyframes scroll-left {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-100%);
+    }
+  }
+
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  @keyframes iconSpin {
+    0% {
+      transform: translateY(-32px);
+    }
+    5%,
+    90% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes nervous-bounce {
+    0%,
+    10% {
+      transform: translateY(0);
+    }
+    25% {
+      transform: translateY(-2px);
+    }
+    35% {
+      transform: translateY(1px);
+    }
+    50% {
+      transform: translateY(-1px);
+    }
+    75% {
+      transform: translateY(2px);
+    }
+    99% {
+      transform: translateY(0);
+    }
+  }
+}
+
+@utility bleed-x {
+  clip-path: inset(0 -100vw 0 -100vw);
+}

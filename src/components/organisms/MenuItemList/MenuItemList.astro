@@ -1,0 +1,27 @@
+---
+import type { menuItemData } from '@components/molecules/MenuItem/MenuItem.astro';
+import MenuItem from '@components/molecules/MenuItem/MenuItem.astro';
+
+export interface menuItemListData {
+  title?: string;
+  items: menuItemData[];
+}
+
+export interface Props {
+  data: menuItemListData;
+}
+
+const { data } = Astro.props;
+const { items, title } = data;
+---
+
+<section class="w-full flex flex-col gap-4 max-w-big">
+  <h2
+    class="font-secondary text-secondary tracking-wider text-center md:text-2xl"
+  >
+    {title}
+  </h2>
+  <div class="w-full flex flex-col gap-2 sm:grid sm:grid-cols-3">
+    {items && items.map((item) => <MenuItem data={item} />)}
+  </div>
+</section>

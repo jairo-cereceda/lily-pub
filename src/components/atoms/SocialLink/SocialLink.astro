@@ -1,0 +1,38 @@
+---
+import { Icon } from 'astro-icon/components';
+
+export interface socialLinkData {
+  link?: string;
+  icon?: string;
+  alt: string;
+}
+
+export interface Props {
+  data: socialLinkData;
+}
+
+const { data } = Astro.props;
+const { link, icon, alt } = data;
+---
+
+{
+  link ? (
+    <a
+      href={link}
+      class="bg-black rounded-full p-3"
+      aria-label={alt}
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <Icon name={icon} size={24} class="text-white" />
+    </a>
+  ) : (
+    <button
+      data-open-fictional-popup
+      class="bg-black rounded-full p-3 cursor-pointer"
+      aria-label={alt}
+    >
+      <Icon name={icon} size={24} class="text-white" />
+    </button>
+  )
+}

@@ -1,0 +1,22 @@
+---
+import type { imgAndTextData } from '@components/molecules/ImgAndText/ImgAndText.astro';
+import ImgAndText from '@components/molecules/ImgAndText/ImgAndText.astro';
+
+export interface imgAndTextListData {
+  items: imgAndTextData[];
+}
+
+export interface Props {
+  data: imgAndTextListData;
+}
+
+const { data } = Astro.props;
+const { items } = data;
+---
+
+<section class="flex flex-col gap-5 overflow-x-hidden max-w-big lg:gap-20">
+  {
+    items &&
+      items.map((item, index) => <ImgAndText data={item} index={index} />)
+  }
+</section>

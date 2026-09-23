@@ -1,0 +1,34 @@
+---
+import Hero from '@components/organisms/Hero/Hero.astro';
+import Layout from '../layouts/Layout.astro';
+
+import BeltLayout from '@layouts/BeltLayout.astro';
+import TextIconsPanel from '@components/organisms/TextIconsPanel/TextIconsPanel.astro';
+import ImgAndTextList from '@components/organisms/ImgAndTextList/ImgAndTextList.astro';
+import Marquee from '@components/organisms/Marquee/Marquee.astro';
+import LinkCardList from '@components/organisms/LinkCardList/LinkCardList.astro';
+import Ubication from '@components/organisms/Ubication/Ubication.astro';
+import {
+  hero,
+  info,
+  linkCardList,
+  map,
+  marquee,
+  scrollDownPanel,
+} from '@data/index';
+---
+
+<Layout pageTitle="Lily Pub | Pub en la playa en El Puerto de Santa María">
+  <Hero data={hero} />
+  <BeltLayout>
+    <TextIconsPanel data={scrollDownPanel} />
+
+    <ImgAndTextList data={info} />
+
+    <Marquee data={marquee} />
+
+    <Ubication data={map} />
+
+    <LinkCardList data={linkCardList} />
+  </BeltLayout>
+</Layout>

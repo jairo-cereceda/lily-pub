@@ -1,0 +1,56 @@
+/*Climate Crisis*/
+@font-face {
+  font-family: 'Climate Crisis';
+  src:
+    url('/fonts/climate-crisis/ClimateCrisis-Regular.woff2') format('woff2'),
+    url('/fonts/climate-crisis/ClimateCrisis-Regular.woff') format('woff'),
+    url('/fonts/climate-crisis/ClimateCrisis-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/*Mozilla Text*/
+@font-face {
+  font-family: 'Mozilla Text';
+  src:
+    url('/fonts/mozilla-text/MozillaText-Regular.woff2') format('woff2'),
+    url('/fonts/mozilla-text/MozillaText-Regular.woff') format('woff'),
+    url('/fonts/mozilla-text/MozillaText-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Mozilla Text';
+  src:
+    url('/fonts/mozilla-text/MozillaText-Light.woff2') format('woff2'),
+    url('/fonts/mozilla-text/MozillaText-Light.woff') format('woff'),
+    url('/fonts/mozilla-text/MozillaText-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Mozilla Text';
+  src:
+    url('/fonts/mozilla-text/MozillaText-SemiBold.woff2') format('woff2'),
+    url('/fonts/mozilla-text/MozillaText-SemiBold.woff') format('woff'),
+    url('/fonts/mozilla-text/MozillaText-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Mozilla Text';
+  src:
+    url('/fonts/mozilla-text/MozillaText-Bold.woff2') format('woff2'),
+    url('/fonts/mozilla-text/MozillaText-Bold.woff') format('woff'),
+    url('/fonts/mozilla-text/MozillaText-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}

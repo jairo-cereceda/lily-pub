@@ -1,0 +1,67 @@
+---
+import { Image } from 'astro:assets';
+import { getImageMetadata } from '@utils/getImage';
+import { Icon } from 'astro-icon/components';
+
+export interface ubicationData {
+  imgSrc: string;
+  imgAlt: string;
+  ubicationUrl: string;
+  directionsUrl: string;
+  road: string;
+  city: string;
+  mapProvider: string;
+}
+
+export interface Props {
+  data: ubicationData;
+}
+
+const { data } = Astro.props;
+const { imgSrc, imgAlt, ubicationUrl, directionsUrl, road, city, mapProvider } =
+  data;
+
+const metadata = await getImageMetadata(imgSrc);
+---
+
+<div class="w-full aspect-video relative max-w-big">
+  <Image
+    src={metadata}
+    width={metadata.width}
+    height={metadata.height}
+    alt={imgAlt}
+    class="border-none rounded-lg w-full h-full pointer-events-none"
+  />
+  <p
+    class="absolute bottom-0 left-0 bg-black/70 text-white text-sm w-full rounded-lg p-1"
+  >
+    Imágenes © {mapProvider}, Datos del mapa © Google
+  </p>
+
+  <div
+    class="absolute top-1 left-1 bg-white text-black text-sm p-1 flex gap-2 rounded-tl-lg md:top-4 md:left-4 md:p-2 md:gap-4"
+  >
+    <div>
+      <p class="font-semibold md:text-lg">{road}</p>
+      <p>{city}</p>
+    </div>
+    <div class="flex gap-2 items-center">
+      <a
+        aria-label="Abrir en google maps"
+        target="_blank"
+        rel="noopener noreferrer"
+        href={ubicationUrl}
+        class="bg-detail p-2 rounded-full transition-colors duration-150 hover:bg-light-detail active:bg-light-detail"
+        ><Icon name="arrow-box" size="18" class="text-white" /></a
+      >
+      <a
+        aria-label="Ver ruta en google maps"
+        class="bg-detail p-2 rounded-full transition-colors duration-150 hover:bg-light-detail active:bg-light-detail"
+        target="_blank"
+        rel="noopener noreferrer"
+        href={directionsUrl}
+        ><Icon name="direction" size="18" class="text-white" /></a
+      >
+    </div>
+  </div>
+</div>
