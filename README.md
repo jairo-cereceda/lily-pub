@@ -78,9 +78,9 @@ Open `http://localhost:4321` in your browser to view the site.
 | `npm run format`  | Formats code using Prettier.           |
 | `npm run test`    | Runs tests using Playwright.           |
 
-## 🌐 Deployment (GitHub Pages)
+## 🌐 Deployment (Vercel)
 
-> This section will be filled when the page is deployed
+> > This site is deployed and hosted on [Vercel](https://lily-pub.vercel.app/).
 
 ## ✒️ Author
 
