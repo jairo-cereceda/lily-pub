@@ -6,7 +6,7 @@ import icon from 'astro-icon';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://jairo-cereceda.github.io',
+  site: 'https://lily-pub.vercel.app/',
   vite: {
     plugins: [tailwindcss()],
     build: {
