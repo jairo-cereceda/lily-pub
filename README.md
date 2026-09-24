@@ -80,7 +80,7 @@ Open `http://localhost:4321` in your browser to view the site.
 
 ## 🌐 Deployment (Vercel)
 
-> > This site is deployed and hosted on [Vercel](https://lily-pub.vercel.app/).
+> This site is deployed and hosted on [Vercel](https://lily-pub.vercel.app/).
 
 ## ✒️ Author
 
